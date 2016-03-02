@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jQuery/jquery-1.12.1.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li class="li">语文</li>
+        <li class="li">数学</li>
+        <li class="li">英语</li>
+        <li class="li">物理</li>
+        <li class="li">化学</li>
+        <li class="li">生物</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    (function($){
+        $.extend({
+            "liFocus":function(myli){
+                myli.css("background-color","#ccc");
+            },
+            "liBlur":function(myli){
+                myli.css("background-color","#fff");
+            }
+        });
+    })(jQuery);
+
+    $(function(){
+        $(".li").bind("mouseover",function(){
+            $.liFocus($(this));
+        });
+        $(".li").bind("mouseout",function(){
+            $.liBlur($(this));
+        });
+    });
+</script>
+</body>
+</html>
